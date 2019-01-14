@@ -1,0 +1,8 @@
+Avoid user being stranded by doing acceptance tests
+--> Find out that something is wrong
+--> Do error handling by reverting to previous state
+
+Use redundancy
+Message lost -- do two way communication to detect
+If the network is disconnected the same thing applies, if sender expects ack signal and dont get it, it will do fault handling
+Elevator never arrives? Try again, i dunno
