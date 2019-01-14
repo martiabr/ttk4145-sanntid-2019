@@ -6,21 +6,30 @@ To complete this exercise you will have to use git. Create one or several commit
 When answering the questions, remember to use all the resources at your disposal. Asking the internet isn't a form of "cheating", it's a way of learning.
 
  ### What is concurrency? What is parallelism? What's the difference?
- > *Your answer here*
+ > Concurrency means the CPU is working on completing several tasks at the same time. Parallelism is the process of
+ actually doing several subtasks at the literal same time on different CPUs.
 
  ### Why have machines become increasingly multicore in the past decade?
- > *Your answer here*
+ > More efficient to introduce more cores that work in parallel instead of trying to increase a clock speed which is already crazy fast.
+ It is difficult to scale a single CPU high faster, for instance because of the high power demand and heating.
 
  ### What kinds of problems motivates the need for concurrent execution?
  (Or phrased differently: What problems do concurrency help in solving?)
- > *Your answer here*
+ > Concurrency allows us to take advantage of multicore systems. In real time programming it is also very important, as
+ it allows us to create several processes that work in parallel, which is obviously very useful for real time systems where several
+ things often has to happen at once and we have strict timing specs that we need to satisfy.
 
  ### Does creating concurrent programs make the programmer's life easier? Harder? Maybe both?
  (Come back to this after you have worked on part 4 of this exercise)
- > *Your answer here*
+ > It is helpful to achieve a lot of tasks, but also add complexity to the system. There are many problems that arise with
+ multithreading which need to be handled.
 
  ### What are the differences between processes, threads, green threads, and coroutines?
- > *Your answer here*
+ > Regular threads are managed by the OS scheduler, while green threads are managed by a higher level scheduler, like a VM or a library.
+ Processes are self-contained execution environments, and consists of one or several threads. The different threads in the process
+ will share the resources of the process. Coroutines vs threads are distinguised by cooperative vs. preemptive multitasking. So while
+ which thread is active is managed by the scheduler, a coroutine will have to give up (yield) control of the CPU itself when it has finished
+ its work or is getting blocked. 
 
  ### Which one of these do `pthread_create()` (C/POSIX), `threading.Thread()` (Python), `go` (Go) create?
  > *Your answer here*
